@@ -231,7 +231,7 @@ Nipple.prototype.hide = function (cb) {
         },
         self.options.fadeTime
     );
-    if (self.options.staticPosition) {
+    if (!self.options.staticPosition) {
         self.restPosition();
     }
 
