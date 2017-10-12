@@ -17,7 +17,8 @@ function Nipple (collection, options) {
         dataOnly: false,
         restOpacity: 0.5,
         mode: 'dynamic',
-        zone: document.body
+        zone: document.body,
+        staticPosition: false
     };
 
     this.config(options);
@@ -230,7 +231,9 @@ Nipple.prototype.hide = function (cb) {
         },
         self.options.fadeTime
     );
-    self.restPosition();
+    if (self.options.staticPosition) {
+        self.restPosition();
+    }
 
     return self;
 };
